@@ -14,10 +14,6 @@ import android.view.View
 
 class MainActivity : AppCompatActivity() {
     val Tag = "Activity 1"
-    private var btn: Button? = null
-    private var imageview: ImageView? = null
-    private val GALLERY = 1
-    private val CAMERA = 2
     val PICK_IMAGE_REQUEST = 1
     var uri: Uri? = null
 
