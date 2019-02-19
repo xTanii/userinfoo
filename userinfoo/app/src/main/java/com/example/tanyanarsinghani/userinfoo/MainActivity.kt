@@ -10,6 +10,7 @@ import kotlinx.android.synthetic.main.activity_main.*
 import android.provider.MediaStore
 import android.net.Uri
 import android.view.View
+import android.widget.Toast
 
 
 class MainActivity : AppCompatActivity() {
@@ -31,17 +32,23 @@ class MainActivity : AppCompatActivity() {
 
         tonextactivity.setOnClickListener {
             Log.d(Tag, "onCreate")
-            val msg: String = etname.text.toString()
+            val intent = Intent(this, SecondActivity::class.java)
+            val msg: String = etname.text.toString().trim()
             val msg1: String = etcontact.text.toString()
             val msg2: String = etaddress.text.toString()
-            val intent = Intent(this, SecondActivity::class.java)
-            intent.putExtra("user_name", msg)
-            intent.putExtra("user_contact", msg1)
-            intent.putExtra("user_address", msg2)
-            intent.putExtra("uri_extra",uri)
-            startActivity(intent)
-        }
+            if (msg.isNotEmpty() && msg1.isNotEmpty() && msg2.isNotEmpty()) {
+                intent.putExtra("user_name", msg)
+                intent.putExtra("user_contact", msg1)
+                intent.putExtra("user_address", msg2)
+                intent.putExtra("uri_extra", uri)
+                startActivity(intent)
 
+            } else {
+                Toast.makeText(this, "Error msg", Toast.LENGTH_LONG).show()
+
+
+            }
+        }
 
     }
 

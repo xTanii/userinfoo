@@ -23,7 +23,18 @@ class SecondActivity : AppCompatActivity() {
         tvCONTACT.text = msgg1
         tvADDRESS.text = msgg2
         userpicc.setImageURI(m)
+        val actionbar= supportActionBar
+        actionbar!!.title="Userinfo"
+        actionbar.setDisplayHomeAsUpEnabled(true)
+        actionbar.setDisplayHomeAsUpEnabled(true)
 
+
+    }
+
+    override fun onSupportNavigateUp(): Boolean {
+
+        onBackPressed()
+        return true
     }
 
     override fun onStart() {
