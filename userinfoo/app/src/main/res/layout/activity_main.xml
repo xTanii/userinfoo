@@ -5,7 +5,7 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".MainActivity">
+        tools:context=".ActivityPackage.MainActivity">
 
     <TextView
             android:layout_width="wrap_content"
@@ -24,11 +24,11 @@
             android:inputType="textPersonName"
             android:text=""
             android:ems="10"
-            android:layout_alignParentEnd="true" android:layout_alignParentTop="true" android:id="@+id/etname"
+            android:layout_alignParentEnd="true" android:layout_alignParentTop="true" android:id="@+id/etnameofuser"
             android:layout_marginTop="8dp"
             app:layout_constraintTop_toTopOf="parent" android:layout_marginBottom="8dp"
-            app:layout_constraintBottom_toTopOf="@+id/etcontact" app:layout_constraintVertical_bias="0.811"
-            android:layout_marginEnd="16dp" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/etcontactofuser" app:layout_constraintVertical_bias="0.814"
+            android:layout_marginEnd="8dp" app:layout_constraintEnd_toEndOf="parent"
     />
     <EditText
             android:layout_width="wrap_content"
@@ -37,7 +37,7 @@
             android:text=""
             android:hint="Enter your contact num"
             android:ems="10"
-            android:layout_alignParentEnd="true" android:layout_alignParentTop="true" android:id="@+id/etcontact"
+            android:layout_alignParentEnd="true" android:layout_alignParentTop="true" android:id="@+id/etcontactofuser"
             android:layout_marginEnd="8dp"
             app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginTop="164dp" app:layout_constraintTop_toTopOf="parent"
@@ -50,29 +50,29 @@
             android:text=""
             android:hint="Enter your address"
             android:ems="10"
-            android:layout_alignParentEnd="true" android:layout_alignTop="@+id/tvcontactt" android:id="@+id/etaddress"
-            android:layout_toEndOf="@+id/tvaddress"
+            android:layout_alignParentEnd="true" android:layout_alignTop="@+id/tvcontactfieldofuser" android:id="@+id/etaddressofuser"
+            android:layout_toEndOf="@+id/tvaddressfieldofuser"
             android:layout_marginTop="8dp"
-            app:layout_constraintTop_toBottomOf="@+id/etcontact" android:layout_marginBottom="8dp"
-            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintVertical_bias="0.117"
-            android:layout_marginEnd="16dp" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/etcontactofuser" android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintVertical_bias="0.135"
+            android:layout_marginEnd="8dp" app:layout_constraintEnd_toEndOf="parent"
     />
     <Button
             android:text="Okay!"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" android:layout_alignParentStart="true"
-            android:layout_alignParentBottom="true" android:id="@+id/tonextactivity"
+            android:layout_alignParentBottom="true" android:id="@+id/touserinfodisplay"
             android:layout_marginEnd="8dp"
             app:layout_constraintEnd_toEndOf="parent" android:layout_marginStart="8dp"
-            app:layout_constraintStart_toStartOf="parent" android:layout_marginBottom="8dp"
-            app:layout_constraintBottom_toBottomOf="parent"/>
+            app:layout_constraintStart_toStartOf="parent" android:layout_marginBottom="16dp"
+            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintHorizontal_bias="0.453"/>
     <ImageView
             android:layout_width="60dp"
-            android:layout_height="41dp"
+            android:layout_height="60dp"
             app:srcCompat="@mipmap/ic_launcher_round"
             android:layout_alignParentBottom="true"
-            android:id="@+id/userpicc"
-            android:layout_alignStart="@+id/etname"
+            android:id="@+id/userpic"
+            android:layout_alignStart="@+id/etnameofuser"
             android:layout_marginTop="8dp"
             app:layout_constraintTop_toTopOf="parent" android:layout_marginBottom="8dp"
             app:layout_constraintBottom_toTopOf="@+id/togetpic" app:layout_constraintVertical_bias="1.0"
@@ -82,55 +82,55 @@
     <Button
             android:text="Select from galary!"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" android:layout_alignEnd="@+id/userpicc"
+            android:layout_height="wrap_content" android:layout_alignEnd="@+id/userpic"
             android:layout_alignParentBottom="true" android:id="@+id/togetpic"
             android:layout_marginEnd="8dp"
             app:layout_constraintEnd_toEndOf="parent" android:layout_marginStart="8dp"
-            app:layout_constraintStart_toStartOf="parent" android:layout_marginBottom="24dp"
-            app:layout_constraintBottom_toTopOf="@+id/tonextactivity" app:layout_constraintHorizontal_bias="0.492"/>
+            app:layout_constraintStart_toStartOf="parent" android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toTopOf="@+id/touserinfodisplay" app:layout_constraintHorizontal_bias="0.409"/>
     <TextView
             android:text="Name"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/tvname"
-            app:layout_constraintEnd_toStartOf="@+id/etname"
+            android:layout_height="24dp"
+            android:id="@+id/tvnamefieldofuser"
+            app:layout_constraintEnd_toStartOf="@+id/etnameofuser"
             android:layout_marginEnd="36dp"
             app:layout_constraintStart_toStartOf="parent"
             android:layout_marginStart="8dp"
             android:layout_marginTop="120dp" app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintHorizontal_bias="0.725"
+            app:layout_constraintHorizontal_bias="0.375"
             android:layout_marginBottom="8dp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintVertical_bias="0.008"/>
+            app:layout_constraintVertical_bias="0.011"/>
     <TextView
             android:text="Contact num"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/tvcontact"
+            android:id="@+id/tvcontactfiieldofuser"
             android:layout_marginStart="8dp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/etcontact"
+            app:layout_constraintEnd_toStartOf="@+id/etcontactofuser"
             android:layout_marginEnd="8dp"
             android:layout_marginBottom="8dp"
             app:layout_constraintBottom_toBottomOf="parent"
             android:layout_marginTop="8dp"
-            app:layout_constraintTop_toBottomOf="@+id/tvname"
-            app:layout_constraintHorizontal_bias="0.528"
-            app:layout_constraintVertical_bias="0.137"/>
+            app:layout_constraintTop_toBottomOf="@+id/tvnamefieldofuser"
+            app:layout_constraintHorizontal_bias="0.415"
+            app:layout_constraintVertical_bias="0.125"/>
     <TextView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/tvaddress"
-            app:layout_constraintEnd_toStartOf="@+id/etaddress"
+            android:layout_height="21dp"
+            android:id="@+id/tvaddressfieldofuser"
+            app:layout_constraintEnd_toStartOf="@+id/etaddressofuser"
             android:layout_marginEnd="8dp"
             android:text="Address"
             app:layout_constraintStart_toStartOf="parent"
             android:layout_marginStart="8dp"
             android:layout_marginTop="276dp"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintHorizontal_bias="0.531"
+            app:layout_constraintHorizontal_bias="0.29"
             android:layout_marginBottom="80dp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintVertical_bias="0.022"/>
+            app:layout_constraintVertical_bias="0.104"/>
 
 </android.support.constraint.ConstraintLayout>

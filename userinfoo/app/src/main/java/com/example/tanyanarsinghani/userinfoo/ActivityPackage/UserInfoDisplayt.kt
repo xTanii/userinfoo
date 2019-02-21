@@ -1,28 +1,36 @@
-package com.example.tanyanarsinghani.userinfoo
+package com.example.tanyanarsinghani.userinfoo.ActivityPackage
 
-import android.net.Uri
+
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.util.Log
+import com.example.tanyanarsinghani.userinfoo.R
+import com.example.tanyanarsinghani.userinfoo.Class.User
+import com.example.tanyanarsinghani.userinfoo.Class.UserRepository
 import kotlinx.android.synthetic.main.activity_second.*
 
 
-class SecondActivity : AppCompatActivity() {
+class UserInfoDisplay: AppCompatActivity() {
 
-    val Tag = "Activity 2"
+    val Tag = UserInfoDisplay::class.java.simpleName
     override fun onCreate(savedInstanceState: Bundle?) {
         Log.d(Tag, "onCreate")
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_second)
         val bundle: Bundle? = intent.extras
-        val msgg = bundle!!.getString("user_name")
-        val msgg1 = bundle.getString("user_contact")
-        val msgg2 = bundle.getString("user_address")
-        val m = bundle.getParcelable<Uri>("uri_extra")
-        tvNAME.text = msgg
-        tvCONTACT.text = msgg1
-        tvADDRESS.text = msgg2
-        userpicc.setImageURI(m)
+        val id  = bundle?.getInt("Id")
+        if(id != null) {
+            val user: User? =
+                UserRepository.getUser(id)
+            if(user != null) {
+                tvnameofuser.text = user.name
+              tvcontactofuser.text = user.contact.toString()
+              tvaddressofuser.text = user.address
+
+                userpic.setImageURI(user.uri)
+
+            }
+        }
         val actionbar= supportActionBar
         actionbar!!.title="Userinfo"
         actionbar.setDisplayHomeAsUpEnabled(true)
@@ -30,6 +38,8 @@ class SecondActivity : AppCompatActivity() {
 
 
     }
+
+
 
     override fun onSupportNavigateUp(): Boolean {
 
