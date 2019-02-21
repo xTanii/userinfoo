@@ -26,7 +26,6 @@ class UserInfoDisplay: AppCompatActivity() {
                 tvnameofuser.text = user.name
               tvcontactofuser.text = user.contact.toString()
               tvaddressofuser.text = user.address
-
                 userpic.setImageURI(user.uri)
 
             }

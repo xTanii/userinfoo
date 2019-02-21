@@ -11,12 +11,11 @@ import com.example.tanyanarsinghani.userinfoo.*
 import com.example.tanyanarsinghani.userinfoo.Adaptor.CustomAdapter
 import com.example.tanyanarsinghani.userinfoo.Class.User
 import com.example.tanyanarsinghani.userinfoo.Class.UserRepository
-import kotlinx.android.synthetic.main.list_layout.*
 import kotlinx.android.synthetic.main.recyclerview.*
 
 
-class MainActivity : AppCompatActivity() {
-    val Tag = MainActivity::class.java.simpleName
+class UserList : AppCompatActivity() {
+    val Tag = UserList::class.java.simpleName
     val listOfUser: ArrayList<User> =
         UserRepository.getAll()
 
